@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app-3">
+        <p v-if="seen">이제 나를 볼 수 있어요.</p>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+    <script>
+        /*
+        조건문과 반복문
+        이 예제는 텍스트와 속성뿐 아니라 DOM의 구조에도 데이터를 바인딩 할 수 있음을 보여준다.
+        또한 Vue 엘리먼트가 Vue에 삽입/갱신/제거될 때 자동으로 
+        {트랜지션 효과}를 적용할 수 있는 강력한 시스템을 제공한다.
+
+        몇가지 디렉티브가 있고 각 디렉티브마다 고유한 기능이 있다.
+        [v-for] 디렉티브는 배열의 데이터를 사용해 항목 목록을 표시하는데 사용할 수 있다.
+        */
+       var app3 = new Vue({
+           el: '#app-3',
+           data: {
+               seen: true
+           }
+       });
+       /*
+       콘솔에서, app4.todos.push({text: 'New item})을 입력하면, 목록에 새 항목이 추가되어야 한다.
+       */
+       var app4 = new Vue({
+           el: '#app-4',
+           data: {
+               todos: [
+                   {text: 'JavaScript 배우기'},
+                   {text: 'Vue 배우기'},
+                   {text: '무언가 멋진 것을 만들기'},
+               ]
+           }
+       });
+    </script>
+</body>
+</html>

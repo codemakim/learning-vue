@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app-2">
+        <span v-bind:title="message">
+            내 위에 잠시 마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있습니다.
+        </span>
+    </div>
+    <script>
+        /*
+        선언적 렌더링2
+        v-bind 속성은 [디렉티브]라고 한다.
+        디렉티브는 Vue에서 제공하는 특수 속성임을 나타내는 [v-]접두어가 붙어있으며,
+        사용자가 짐작할 수 있듯 렌터링 된 DOM에 특수한 반응형 동작을 한다.
+        -> "이 요소의 [title] 속성을 Vue 인스턴스의 message 속성 값으로 최신 상태를 유지한다.(? 문법보소)"
+        */
+       var app2 = new Vue({
+           el: '#app-2',
+           data: {
+               message: `이 페이지는 ${new Date()}에 로드 되었습니다.`
+           }
+       });
+    </script>
+</body>
+</html>

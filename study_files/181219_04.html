@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app-5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">메시지 뒤집기</button>
+    </div>
+    <div id="app-6">
+        <p>{{message}}</p>
+        <input v-model="message"/>
+    </div>
+    <script>
+        /*
+        사용자 입력 핸들링
+        사용자가 앱과 상호 작용할 수 있게 하기 위해 [v-on] 디렉티브를 사용해
+        Vue 인스턴스에 메소드를 호출하는 이벤트 리스너를 첨부할 수 있다.
+
+        이 메소드에서 우리는 단순히 DOM을 건드리지 않고 앱의 상태를 업데이트 한다.
+        모든 DOM 조작은 Vue에 의해 처리되며, 작성한 코드는 기본 로직에만 초점을 맞춘다.
+        */
+       var app5 = new Vue({
+           el: '#app-5',
+           data: {
+               message: '안녕하세요! Vue.js!'
+           },
+           methods: {
+                reverseMessage: function() {
+                   this.message = this.message.split('').reverse().join('');
+                }
+           }
+       });
+       /*
+       Vue는 또한 양식에 대한 입력과 앱 상태를 양방향으로 바인딩하는 v-model 디렉티브를 제공한다.
+       */
+       var app6 = new Vue({
+           el: '#app-6',
+           data: {
+               message: '안녕하세요 Vue!!'
+           }
+       });
+    </script>
+</body>
+</html>
