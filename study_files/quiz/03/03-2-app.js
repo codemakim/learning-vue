@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     event.preventDefault();
-    Vue.component('my-global-component', {
-        template: '<div>전역 컴포넌트입니다.</div>'
+    Vue.component('todo-footer', {
+        template: '<p>This is another global child component</p>'
     });
 
-    var localComponent1 = {
-        template: '<div>로컬 컴포넌트입니다.</div>'
-    };
-
-    var localComponent2 = {
-        template: '<div><strong>두번째</strong> 로컬 컴포넌트입니다.</div>'
+    var localComponent = {
+        template: '<p>This is another local child component</p>'
     };
 
     new Vue({
@@ -18,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             message: 'This is a parent component'
         },
         components: {
-            'local-component-1': localComponent1,
-            'local-component-2': localComponent2
+            'todo-list': localComponent,
         }
     });
 });

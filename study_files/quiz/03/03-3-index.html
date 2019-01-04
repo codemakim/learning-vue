@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Vue Components Communication Quiz</title>
+    </head>
+    <body>
+        <div id="app">
+            <child-component v-bind:propsdata="message" v-on:paste-string="pasteString"></child-component>
+            <sibling-component v-bind:propsdata="anotherMessage"></sibling-component>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <script src="03-3-app.js" charset="UTF-8"></script>
+    </body>
+</html>

@@ -4,12 +4,11 @@
     </head>
     <body>
         <div id="app">
-            {{ message }}
-            <hr>
-            <my-global-component></my-global-component>
-            <hr>
-            <local-component-1></local-component-1>
-            <local-component-2></local-component-2>
+            <header>
+                <h3>{{ message }}</h3>
+            </header>
+            <todo-footer></todo-footer>
+            <todo-list></todo-list>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
         <script src="03-2-app.js" charset="UTF-8"></script>
