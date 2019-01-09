@@ -1,11 +1,11 @@
 <template>
-  <div id="app"></div>
+    <div>input</div>
 </template>
 
 <script>
 export default {
-
-};
+    
+}
 </script>
 
 <style>
