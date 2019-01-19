@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     h1 {
         color: #2f3b52;
         font-weight: 900;
