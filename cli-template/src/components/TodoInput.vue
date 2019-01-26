@@ -18,7 +18,7 @@ export default {
         addTodo() {
             let value = this.newTodoItem.trim();
             if(value !== '') {
-                localStorage.setItem(value, value);
+                this.$emit('addTodo', value);
                 this.clearInupt();
             }
         },
